@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-xs-6">
+      <img src="../assets/images/Selenium_logo.svg.png" alt="img-thumbnail" class="img-thumbnail">
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-6">
+        <dl class="row">
+          <dt class="col-sm-3">Selenium(software)</dt>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+        <dl class="row">
+          <dt class="col-sm-3">General info</dt>
+        </dl>
+  </div>
+
+  <div class="container">
+    <dl class="row">
+      <dd class="col-sm-9">
+        <p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.[3] It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE).[4] It also provides a test domain-specific language (Selenese) to write tests in a number of popular programming languages, including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala. Selenium runs on Windows, Linux, and macOS. It is open-source software released under the Apache License 2.0.</p>
+        <p>Selenium is an open-source automation framework for web applications, enabling testers and developers to automate browser interactions and perform functional testing. With versatile tools like WebDriver, Selenium supports various programming languages and facilitates cross-browser testing, making it a go-to choice for efficient and scalable web automation</p>
+      </dd>
+    </dl>
+</div>
+
+<div class="container">
+  <dl class="row">
+    <dt class="col-sm-3">Example</dt>
+  </dl>
+</div>
+
+<div class="container">
+  <dl class="row">
+    <dt class="col-sm-3">Python</dt>
+  </dl>
+</div>
+
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+  <span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+  <span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
+  <span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+  <span class="kn">from</span> <span class="nn">selenium.webdriver.support.expected_conditions</span> <span class="kn">import</span> <span class="n">presence_of_element_located</span>
+  
+  <span class="c1">#This example requires Selenium WebDriver 3.13 or newer</span>
+  <span class="k">with</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
+      <span class="n">wait</span> <span class="o">=</span> <span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+      <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://google.com/ncr"</span><span class="p">)</span>
+      <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s2">"q"</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"cheese"</span> <span class="o">+</span> <span class="n">Keys</span><span class="o">.</span><span class="n">RETURN</span><span class="p">)</span>
+      <span class="n">first_result</span> <span class="o">=</span> <span class="n">wait</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">"h3"</span><span class="p">)))</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">first_result</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">"textContent"</span><span class="p">))</span>
+  </pre></div>
+
